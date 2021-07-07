@@ -5,27 +5,7 @@ import AddTask from './components/AddTask'
 
 const App = () => {
     const [showAddTask, setShowAddTask] = useState(false)
-    const [tasks, setTasks] = useState(
-        [
-            {
-                id: 1,
-                text: 'Doctors Appt',
-                day: 'feb 5th, 2:30pm',
-                reminder: true,
-            },
-            {
-                id: 2,
-                text: 'haircut Appt',
-                day: 'feb 6th, 1:30pm',
-                reminder: true,
-            },
-            {
-                id: 3,
-                text: 'vet Appt',
-                day: 'feb 7th, 7:30am',
-                reminder: false,
-            },
-        ])
+    const [tasks, setTasks] = useState([])
         //add task
     const addTask = (task) => {
         // console.log(task);
