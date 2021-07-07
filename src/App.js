@@ -29,14 +29,20 @@ const App = () => {
         setTasks(tasks.filter((task)=> task.id!==id))
         // console.log('delete', id)
         }
+        //Toggle Reminder
+
 
     return (
         <div className='container'>
             <Header />
-            <Tasks tasks={tasks} onDelete={deleteTask}/>
+            {tasks.length > 0 ? (
+                <Tasks tasks={tasks} onDelete=
+                {deleteTask} />
+            ): (
+            'No Tasks Left to Do'
+            )}
         </div>
     )
 }
-
 
 export default App
