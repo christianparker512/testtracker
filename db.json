@@ -17,6 +17,12 @@
       "text": "Vet Appt",
       "day": "feb 7th, 7:30am",
       "reminder": false
+    },
+    {
+      "text": "tuesday",
+      "day": "tueday",
+      "reminder": false,
+      "id": 4
     }
   ]
 }
