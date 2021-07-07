@@ -7,14 +7,13 @@ const AddTask = ({ onAdd }) => {
 
     const onSubmit = (e) => {
         e.preventDefault()
-
         if (!text) {
             alert('Please add a task')
             return
         }
 
         onAdd({ text, day, reminder })
-
+        //clears values back to nothing.
         setText('')
         setDay('')
         setReminder(false)
@@ -23,10 +22,10 @@ const AddTask = ({ onAdd }) => {
     return (
         <form className='add-form' onSubmit={onSubmit}>
             <div className='form-control'>
-                <label>Task</label>
+                <label>Upcoming Tasks</label>
                 <input
                     type='text'
-                    placeholder='Add Task'
+                    placeholder='Add a Task'
                     value={text}
                     onChange={(e) => setText(e.target.value)}
                 />
@@ -35,7 +34,7 @@ const AddTask = ({ onAdd }) => {
                 <label>Day & Time</label>
                 <input
                     type='text'
-                    placeholder='Add Day & Time'
+                    placeholder='Add which Day & Time'
                     value={day}
                     onChange={(e) => setDay(e.target.value)}
                 />
@@ -50,7 +49,7 @@ const AddTask = ({ onAdd }) => {
                 />
             </div>
 
-            <input type='submit' value='Save Task' className='btn btn-block' />
+            <input type='submit' value='Save Your Task' className='btn btn-block' />
         </form>
     )
 }
