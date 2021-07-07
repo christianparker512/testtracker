@@ -30,14 +30,19 @@ const App = () => {
         // console.log('delete', id)
         }
         //Toggle Reminder
-
+        const toggleReminder = (id) => {
+        setTasks(tasks.map((task) => task.id === id
+        ? {...task, reminder: !task.reminder} : task))
+        // console.log(id)
+        }
 
     return (
         <div className='container'>
             <Header />
             {tasks.length > 0 ? (
                 <Tasks tasks={tasks} onDelete=
-                {deleteTask} />
+                {deleteTask}
+                onToggle={{toggleReminder}}/>
             ): (
             'No Tasks Left to Do'
             )}
