@@ -1,20 +1,36 @@
-
 import Header from './components/Header'
+import Tasks from './components/Tasks'
+import {useState} from 'react'
 
-function App() {
-    const name = 'Lisa'
-    const x = true
-
-  return (
-    <div className='container'>
-      <h1>Hello from Chris</h1>
-        <h2>While he's playing with React</h2>
-        <h3>Hello {name}</h3>
-        <h3>Hello {x ? 'Yes' : 'No'}</h3>
-        <Header title='Chris' />
-    </div>
-
-  );
+const App = () => {
+    const [tasks, setTasks] = useState(
+        [
+            {
+                id: 1,
+                text: 'Doctors Appt',
+                day: 'feb 5th, 2:30pm',
+                reminder: true,
+            },
+            {
+                id: 2,
+                text: 'haircut Appt',
+                day: 'feb 6th, 1:30pm',
+                reminder: true,
+            },
+            {
+                id: 3,
+                text: 'vet Appt',
+                day: 'feb 7th, 7:30am',
+                reminder: false,
+            },
+        ])
+    return (
+        <div className='container'>
+            <Header />
+            <Tasks tasks={tasks}/>
+        </div>
+    )
 }
 
-export default App;
+
+export default App
